@@ -1,0 +1,31 @@
+install framer-motion (carousel)
+
+DrilldownAppcopilot component:
+    props:
+        lowPrice
+        highPrice
+        suggestedPrice
+
+Property component:
+    props:
+        rect (image of the apartment)
+    
+PropertyListing component:
+    props:
+        propertyName(string)
+        address(string)
+        suggestedRentValue(number)
+        rent(number)
+        floorNumber(number)
+        stories(number)
+        avgUnitSize=(string)
+        views(number)
+        showings(number)
+        date(date, string)
+        parking(string)
+        type(string)
+        distance(string)
+
+Cardinfo component:
+    props:
+        

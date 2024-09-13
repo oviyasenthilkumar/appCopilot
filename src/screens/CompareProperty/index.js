@@ -1,0 +1,1 @@
+export { CompareProperty } from "./CompareProperty";

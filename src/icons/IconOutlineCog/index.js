@@ -1,0 +1,1 @@
+export { IconOutlineCog } from "./IconOutlineCog";

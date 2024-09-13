@@ -1,0 +1,1 @@
+export { IconOutlineBell } from "./IconOutlineBell";
