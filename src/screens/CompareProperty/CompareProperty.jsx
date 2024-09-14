@@ -5,6 +5,7 @@ import vector3 from "../../img/vector-3.svg";
 import Locations from "./Locations";
 import Layout from "../../layout/Layout";
 import { Component } from "../../components/Component";
+import { useNavigate } from "react-router-dom";
 
 const Panel = ({ text }) => (
   <div className="relative w-auto h-[47px] ">
@@ -20,8 +21,9 @@ const Panel = ({ text }) => (
 );
 
 export const CompareProperty = () => {
+  const navigate = useNavigate();
   return (
-    <Layout>
+    <Layout title={"Search & Compare"}>
       <div className="w-[1012px] h-[47px] my-6">
         <div className=" w-[236px] h-[47px] bg-[#f6f6fa] rounded-[23.5px] flex items-center p-[5px]">
           <input
@@ -48,7 +50,7 @@ export const CompareProperty = () => {
         {[1, 2, 3, 4, 5, 5, 6, 6, 6, 5, 4, 4].map(() => {
           return (
             <div className="py-[10px]">
-              <Locations />
+              <Locations navigate={navigate} />
             </div>
           );
         })}

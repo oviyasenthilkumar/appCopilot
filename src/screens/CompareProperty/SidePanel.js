@@ -1,4 +1,3 @@
-
 import town from "../../img/town-2.svg";
 import likeButton from "../../img/icon-1.svg";
 import apiCred from "../../img/icon-2.svg";
@@ -10,7 +9,7 @@ import { Caret } from "../../icons/Caret";
 import setting from "../../img/setting.svg";
 import support from "../../img/support.svg";
 
-const SidePanelItem = ({ iconSrc, text, notification }) => (
+const SidePanelItem = ({ iconSrc, text, notification, color }) => (
   <div className="h-11 items-center gap-3 px-4 py-3 rounded-full flex relative hover:bg-gray-100 cursor-pointer">
     <div className="flex items-start gap-3 relative flex-1">
       {iconSrc ? (
@@ -18,7 +17,13 @@ const SidePanelItem = ({ iconSrc, text, notification }) => (
       ) : (
         <Icon20 className="w-5 h-5" />
       )}
-      <div className="text-gray-700 text-base font-medium">{text}</div>
+      <div
+        className={`${
+          color ? "text-orange" : "text-black"
+        } text-base font-medium`}
+      >
+        {text}
+      </div>
       {notification && (
         <div className="absolute w-2 h-2 top-2 left-6 bg-orange-500 rounded-full border border-white" />
       )}
@@ -39,7 +44,13 @@ export default function SidePanel() {
       <div className="px-7 mt-8 space-y-6">
         {/* Section 1 */}
         <div className="space-y-1">
-          <SidePanelItem iconSrc={town} text="Search & Compare" />
+          <div className="bg-white py-[6px] rounded-full drop-shadow-md">
+            <SidePanelItem
+              iconSrc={town}
+              text="Search & Compare"
+              color={"#FF914D"}
+            />
+          </div>
           <SidePanelItem iconSrc={likeButton} text="Favorite" />
         </div>
 

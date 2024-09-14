@@ -5,8 +5,8 @@ import likeButton from "../../img/icon-3.svg";
 
 import checkButton from "../../img/vector-81.svg";
 
-export default function Locations() {
-  return <PropertyListing />;
+export default function Locations({ navigate }) {
+  return <PropertyListing navigate={navigate} />;
 }
 
 function PropertyListing({
@@ -23,6 +23,7 @@ function PropertyListing({
   parking = "-",
   type = "Apartments - All",
   distance = "-",
+  navigate,
 }) {
   return (
     <div className="h-[185px] border flex flex-row justify-between rounded-2xl border-grey">
@@ -45,6 +46,7 @@ function PropertyListing({
         type={type}
         distance={distance}
         suggestedRentValue={suggestedRentValue}
+        navigate={navigate}
       />
     </div>
   );
@@ -111,7 +113,11 @@ function CardValues({
   type,
   distance,
   suggestedRentValue,
+  navigate
 }) {
+  const handleGoToDrill = () => {
+    navigate("/drilldown");
+  };
   return (
     <div className="flex flex-row flex-1 justify-between p-6">
       <div className="flex flex-col gap-30">
@@ -144,7 +150,7 @@ function CardValues({
             Suggested Rent
           </div>
         </div>
-        <div>
+        <div onClick={handleGoToDrill}>
           <ButtonRounded
             text="View Rental Comparisons"
             className="text-black text-xs"
