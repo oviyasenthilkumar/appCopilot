@@ -1,1 +1,1 @@
-export {DrildownAppcopilot } from "./DrildownAppcopilot";
+export { DrildownAppcopilot } from "./DrildownAppcopilot";
