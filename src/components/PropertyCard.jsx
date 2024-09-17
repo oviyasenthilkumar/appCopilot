@@ -107,7 +107,7 @@ const MyPropertyCard =(({card})=>{
 
   return (
     <div
-      className=" w-[228px] pb-[12px] "
+      className=" pb-[12px] "
       key={key}
     >
       <div className="h-[718px] border border-grey rounded-t-[61px] rounded-br-[25px] rounded-bl-[25px] border-t-0">
