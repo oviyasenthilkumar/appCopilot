@@ -30,7 +30,7 @@ const SidePanelItem = ({
       )}
       <div
         className={`${
-          color ? "text-orange" : "text-black"
+          color ? "text-orange" : "text-[#808489]"
         } text-sm font-medium`}
       >
         {text}
@@ -41,7 +41,6 @@ const SidePanelItem = ({
     </div>
   </div>
 );
-
 
 export default function SidePanel() {
   const navigate = useNavigate();

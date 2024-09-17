@@ -10,7 +10,9 @@ function Layout({ children, title }) {
         <SidePanel />
         <div className="flex-1">
           <div className="flex flex-1 flex-row justify-between">
-            <div className="[font-family:Poppins,Helvetica] text-black text-[32px] font-semibold">{title}</div>
+            <div className="[font-family:Poppins,Helvetica] text-black text-[32px] font-semibold">
+              {title}
+            </div>
             <Component
               className="!border-[unset] !border-[unset]"
               property1="group-30"
