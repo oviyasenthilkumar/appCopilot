@@ -12,10 +12,10 @@ function Layout({ children, title }) {
           <div className="flex flex-1 flex-row justify-between">
             <div className="text-black text-[32px] font-semibold">{title}</div>
             <Component
-          className="!border-[unset] !border-[unset]"
-          property1="group-30"
-          pullDataClassName="!left-[34px] !top-[15px]"
-        />
+              className="!border-[unset] !border-[unset]"
+              property1="group-30"
+              pullDataClassName="!left-[34px] !top-[15px]"
+            />
             {/* <button className="w-[122px] bg-black text-white text-sm font-semibold px-6 py-2 rounded-full">
               Pull Data
             </button> */}
