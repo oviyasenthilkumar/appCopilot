@@ -27,7 +27,7 @@ const SidePanelItem = ({ iconSrc, text, notification }) => (
 
 export default function SidePanel() {
     return (
-        <div className="sticky w-[335px] h-[678px] top-[30px] left-[30px] bg-[#f6f6fa] rounded-[37px] overflow-y-auto">
+        <div className="sticky h-[678px] top-[30px] left-[30px] bg-[#f6f6fa] rounded-[37px] overflow-y-auto">
           <div className="sticky absolute w-[220px] h-[61px] top-[41px] left-10 flex items-center">
             <img className="w-10 h-[61px]" alt="Logo" src={fullLogo1} />
             <img className="w-[172px] h-4 ml-3" alt="Logo" src={fullLogo2} />

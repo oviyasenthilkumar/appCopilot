@@ -20,18 +20,6 @@ import AdressCard from "../../components/Component/AdressCard";
 import PropertyCard from "../../components/PropertyCard";
 import CarouselComponent from "../../components/Component/CarouselComponent";
 
-// characteristics of a home -> db || default values
-
-// faq questions -> db || default values
-// const questions = [
-//   "What should I do if I notice suspicious activity on my account?",
-//   "How can I update my property listing?",
-//   "How do I change my email alert preferences?",
-//   "How do I reset my password?",
-//   "When should I raise or lower my rent price?",
-//   "What should I do if I notice suspicious activity on my account?",
-// ];
-
 const faqData = [
   {
     question: "What should I do if I notice suspicious activity on my account?",
@@ -120,9 +108,7 @@ export const DrildownAppcopilot = ({
           <CarouselComponent />
         </div>
 
-        {/* <button className="bg-black text-white text-sm font-normal px-6 py-4 rounded-full mt-4">
-          Add More Properties
-        </button> */}
+       
         <div className="mt-10">
           <p className="[font-family:Poppins,Helvetica] font-bold text-xl text-black text-[18px] tracking-wide leading-2 whitespace-nowrap">
             Frequently Asked Questions
@@ -159,51 +145,78 @@ const Map = () => {
 const Panel = () => {
   return (
     <>
-      <div className="inline-flex items-center gap-1.5 relative top-5 ">
-        <div className="relative w-[154px] h-[47px]">
-          <div className="relative w-[152px] h-[47px] bg-[#d9d9d940] rounded-[23.5px]">
-            <img
-              className="absolute w-[11px] h-1.5 top-5 left-[124px]"
-              alt="Vector"
-              src={vector2}
-            />
-            <div className="absolute h-6 top-[11px] left-5 [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] whitespace-nowrap">
-              Rental Status
-            </div>
-          </div>
-        </div>
-        <div className="relative w-[260px] h-[47px]">
-          <div className="relative w-[258px] h-[47px] bg-[#d9d9d940] rounded-[23.5px]">
-            <img
-              className="top-[22px] left-[230px] absolute w-[11px] h-1.5"
-              alt="Vector"
-              src={vector2}
-            />
-            <p className="absolute h-6 top-3 left-5 [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] whitespace-nowrap">
-              No. of Properties to Compare
-            </p>
-          </div>
-        </div>
-        <div className="relative w-[254px] h-[47px] mr-[-2.00px]">
-          <div className="relative w-[252px] h-[47px] bg-[#d9d9d940] rounded-[23.5px]">
-            <img
-              className="top-5 left-56 absolute w-[11px] h-1.5"
-              alt="Vector"
-              src={vector2}
-            />
-            <p className="absolute h-6 top-[11px] left-5 [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] whitespace-nowrap">
-              Any Distance (0.5 mi to 5 mi)
-            </p>
-          </div>
-        </div>
-      </div>
+     <div className="inline-flex items-center gap-1.5 relative top-5">
+  {/* Rental Status */}
+  <div
+    className="relative w-[154px] h-[47px] cursor-pointer"
+    onClick={() => document.getElementById("rental-status-select").click()}
+  >
+    <div className="relative w-[152px] h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center">
+      <img className="absolute w-[11px] h-1.5 top-5 left-[124px]" alt="Vector" src={vector2} />
+      <select
+        id="rental-status-select"
+        className="absolute text-center inset-0 w-full h-full bg-transparent appearance-none [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] cursor-pointer focus:outline-none"
+      >
+        <option value="Rental Status">Rental Status</option>
+        <option value="Active">Active</option>
+        <option value="Rented">Rented</option>
+        <option value="Off-Market">Off-Market</option>
+      </select>
+    </div>
+  </div>
+
+  {/* No. of Properties to Compare */}
+  <div
+    className="relative w-[260px] h-[47px] cursor-pointer"
+    onClick={() => document.getElementById("properties-select").click()}
+  >
+    <div className="relative w-[258px] h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center">
+      <img className="top-[22px] left-[230px] absolute w-[11px] h-1.5" alt="Vector" src={vector2} />
+      <select
+        id="properties-select"
+        className="absolute text-center inset-0 w-full h-full bg-transparent appearance-none [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] cursor-pointer focus:outline-none"
+      >
+        <option value="No. of Properties to Compare">No. of Properties to Compare</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9+">9+</option>
+      </select>
+    </div>
+  </div>
+
+  {/* Any Distance */}
+  <div
+    className="relative w-[254px] h-[47px] mr-[-2.00px] cursor-pointer"
+    onClick={() => document.getElementById("distance-select").click()}
+  >
+    <div className="relative w-[252px] h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center">
+      <img className="top-5 left-56 absolute w-[11px] h-1.5" alt="Vector" src={vector2} />
+      <select
+        id="distance-select"
+        className="absolute text-center inset-0 w-full h-full bg-transparent appearance-none [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] cursor-pointer focus:outline-none"
+      >
+        <option value="Any Distance">Any Distance (0.5 mi to 5 mi)</option>
+        <option value="0.5 mi">0.5 mi</option>
+        <option value="1 mi">1 mi</option>
+        <option value="2 mi">2 mi</option>
+        <option value="3 mi">3 mi</option>
+        <option value="5 mi">5 mi</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+
     </>
   );
 };
 
 function FAQ({ q, a, isExpanded, onToggle }) {
   return (
-    <div className="w-full md:w-[48%] bg-[#f4f4f6] rounded-[18px] p-[24px] mb-4">
+    <div className="w-full md:w-[100%] bg-[#f4f4f6] rounded-[18px] p-[18px] mb-4">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={onToggle}
@@ -234,7 +247,7 @@ function FAQList() {
   };
 
   return (
-    <div className="flex flex-wrap gap-10">
+    <div className="flex flex-wrap">
       {faqData.map((item, index) => (
         <FAQ
           key={index}

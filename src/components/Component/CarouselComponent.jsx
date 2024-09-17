@@ -54,6 +54,8 @@ const CarouselComponent = () => {
       beds: "3",
       baths: "2",
       sqft: "1,800",
+      view:"10",
+      show:"20",
       status: true,
     },
     {

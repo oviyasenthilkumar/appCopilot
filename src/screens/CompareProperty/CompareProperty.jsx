@@ -1,31 +1,42 @@
-import React from "react";
-
+import React , { useState} from "react";
 import searchButton from "../../img/icon-4.svg";
 import vector3 from "../../img/vector-3.svg";
 import Locations from "./Locations";
 import Layout from "../../layout/Layout";
 import { Component } from "../../components/Component";
 import { useNavigate } from "react-router-dom";
+import vector2 from "../../img/vector-2.svg";
 
-const Panel = ({ text }) => (
-  <div>
-    <div className="w-auto h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center justify-center px-6">
-      <div className="flex justify-between items-center">
-        <div className="text-center text-[#2a2a33] text-[0.880rem] font-[400] mr-2">
-          {text}
-        </div>
-        <img className="h-1.5" alt="Vector" src={vector3} />
-      </div>
+const Panel = ({ text, options, iconSrc }) => {
+  return (
+    <div className="flex flex-col text-black w-full items-center relative w-fit-content bg-[#F5F7F8]  rounded-[25px] cursor-pointer">
+      {/* Wrap select in a label */}
+      <label className="relative w-full h-full">
+        <select className="w-full bg-transparent text-[14px] font-medium p-[12px] appearance-none focus:outline-none focus:border-blue-500 cursor-pointer text-center">
+          {options.map((option, idx) => (
+            <option key={idx} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        {/* Custom Icon */}
+        <img
+          className="absolute top-[50%] right-4 transform -translate-y-[50%] w-[11px] h-[6px] pointer-events-none"
+          alt="Custom Icon"
+          src={vector2}
+        />
+      </label>
     </div>
-  </div>
-);
+  );
+};
+
 
 export const CompareProperty = () => {
   const navigate = useNavigate();
   return (
     <Layout title={"Search & Compare"}>
       <div className="[font-family:Poppins,Helvetica] font-bold h-[47px] my-6 flex justify-between gap-[20px]">
-        <div className=" w-[300px] h-[47px] bg-[#f6f6fa] rounded-[23.5px] flex items-center p-[5px]">
+        <div className="w-[25%] h-[47px] bg-[#f6f6fa] rounded-[23.5px] flex items-center p-[5px]">
           <input
             className="w-full h-full pl-6 bg-transparent border-none text-black text-xs font-normal rounded-[25px]"
             placeholder="Search..."
@@ -38,20 +49,35 @@ export const CompareProperty = () => {
             />
           </div>
         </div>
-        <div className="flex justify-around  h-[47px] items-center gap-[11px] ">
-          {[
-            "Amenities",
-            "Square Feet",
-            "Leasing End Date Range",
-            "Listing Type",
-          ].map((text, idx) => (
-            <Panel key={idx} text={text} />
-          ))}
-        </div>
+       <div className="flex w-[60%] justify-between items-center h-auto gap-6">
+      {[
+        {
+          text: "Amenities",
+          options: ["Amenities", "View", "Balcony/Patio", "Parking", "Pet-Friendly", "Gym", "Swimming Pool"],
+        },
+        {
+          text: "Square Feet",
+          options: ["Square Feet", "500-1000", "1000-1500", "1500-2000", "2000-2500", "2500-3000", "3000-5000", "5000+"],
+        },
+        {
+          text: "Leasing End Date",
+          options: ["Leasing End Date", "All", "1-3 Months", "3-6 Months", "6-9 Months", "9-12 Months", "12-15 Months"],
+        },
+        {
+          text: "Listing Type",
+          options: ["Listing Type", "All Listings", "Active Listings", "Rented Listings"],
+        },
+      ].map((item, idx) => (
+        <Panel key={idx} text={item.text} options={item.options} iconSrc="vector2" />
+      ))}
+    </div>
+
+
+
         {/* saved button */}
         <div className="relative w-[124px] h-[47px]">
           <div className="relative w-[122px] h-[47px] bg-black  rounded-[23.5px]">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 [font-family:'Poppins',Helvetica] font-semibold text-white text-m text-center">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 [font-family:'Poppins',Helvetica] font-normal text-white text-m text-center">
               search
             </div>
           </div>
@@ -76,3 +102,7 @@ export const CompareProperty = () => {
     </Layout>
   );
 };
+
+
+
+
