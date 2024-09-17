@@ -8,9 +8,20 @@ import { Icon20 } from "../../icons/Icon20";
 import { Caret } from "../../icons/Caret";
 import setting from "../../img/setting.svg";
 import support from "../../img/support.svg";
-
-const SidePanelItem = ({ iconSrc, text, notification, color }) => (
-  <div className="[font-family:Poppins,Helvetica] h-11 items-center gap-3 px-4 py-3 rounded-full flex relative hover:bg-gray-100 cursor-pointer">
+import { useNavigate } from "react-router-dom";
+const SidePanelItem = ({
+  iconSrc,
+  text,
+  notification,
+  color,
+  onClick,
+  isActive,
+}) => (
+  <div
+    className={`[font-family:Poppins,Helvetica] h-11 items-center gap-3 px-4 py-3 rounded-full flex relative cursor-pointer 
+      ${isActive ? "bg-white drop-shadow-md" : "hover:bg-gray-100"}`}
+    onClick={onClick}
+  >
     <div className="flex items-start gap-3 relative flex-1">
       {iconSrc ? (
         <img className="w-5 h-5" alt="Icon" src={iconSrc} />
@@ -31,10 +42,13 @@ const SidePanelItem = ({ iconSrc, text, notification, color }) => (
   </div>
 );
 
+
 export default function SidePanel() {
-  
+  const navigate = useNavigate();
+  const currentPath = window.location.pathname; // Get the current path to determine active state
+
   return (
-    <div className="sticky top-8 left-8 w-[335px] h-[678px] bg-[#f6f6fa] rounded-[37px] overflow-y-auto shadow-lg">
+    <div className="sticky top-8 left-8 h-[678px] bg-[#f6f6fa] rounded-[37px] overflow-y-auto shadow-lg">
       {/* Logo Section */}
       <div className="flex items-center px-10 py-8">
         <img className="w-10" alt="Logo" src={fullLogo1} />
@@ -45,13 +59,13 @@ export default function SidePanel() {
       <div className="px-7 mt-8 space-y-6">
         {/* Section 1 */}
         <div className="space-y-1">
-          <div className="bg-white py-[6px] rounded-full drop-shadow-md">
-            <SidePanelItem
-              iconSrc={town}
-              text="Search & Compare"
-              color={"#FF914D"}
-            />
-          </div>
+          <SidePanelItem
+            iconSrc={town}
+            text="Search & Compare"
+            color={"#FF914D"}
+            isActive={currentPath === "/"} // Set active state based on the route
+            onClick={() => navigate("/")}
+          />
           <SidePanelItem iconSrc={likeButton} text="Favorite" />
         </div>
 
@@ -61,7 +75,6 @@ export default function SidePanel() {
         {/* Section 2 */}
         <div className="space-y-1">
           <SidePanelItem text="Notifications" notification />
-
           <SidePanelItem iconSrc={setting} text="Settings" />
           <SidePanelItem iconSrc={support} text="Support" />
           <SidePanelItem iconSrc={apiCred} text="API Credentials" />

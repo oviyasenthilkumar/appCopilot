@@ -62,9 +62,9 @@ const MyPropertyCard =(({card})=>{
   </div>
 
   <div className="font-bold text-black text-base"> {card.price} </div>
-  <div className="text-[#2a2a33] text-sm mt-1 pt-[13px]"> {card.sqPirce} </div>
+  <div className="text-[#2a2a33] text-[15px] mt-1 pt-[13px]"> {card.sqPirce} </div>
   
-  <div className="font-bold text-orange text-sm pt-[4rem] pb-[10px]"> 2406 175th Ave NE </div>
+  <div className="font-bold text-orange text-sm pt-[2.5rem] pb-[10px]"> 2406 175th Ave NE </div>
 
   {/* Centering the button */}
   <div className="flex items-center justify-center">
@@ -72,10 +72,11 @@ const MyPropertyCard =(({card})=>{
       Adjust Price
     </button>
   </div>
-
-  <div className="text-[#2a2a33] text-sm font-bold pt-[3rem]"> {card.beds} beds </div>
-  <div className="text-[#2a2a33] text-sm mt-1 font-bold pt-[13px]"> {card.baths} baths </div>
-  <div className="text-[#2a2a33] text-sm mt-1 font-bold pt-[13px]"> {card.sqft} sq ft </div>
+     <div className="text-[#2a2a33] text-sm font-bold pt-[1.5rem]"> No. of showings : {card.show}</div>
+      <div className="text-[#2a2a33] text-sm font-bold pt-[10px]"> No. of viewed :{card.view} </div>
+  <div className="text-[#2a2a33] text-sm font-bold pt-[10px]"> {card.beds} beds </div>
+  <div className="text-[#2a2a33] text-sm mt-1 font-bold pt-[10px]"> {card.baths} baths </div>
+  <div className="text-[#2a2a33] text-sm mt-1 font-bold pt-[10px]"> {card.sqft} sq ft </div>
 </div>
 
     </>
@@ -85,7 +86,7 @@ const MyPropertyCard =(({card})=>{
     <div className=" w-full p-[12px] pl-[22px] ">
       
       <div className="font-bold text-black text-base"> {card.price} </div>
-      <div className="text-[#2a2a33] text-sm mt-1"> {card.sqPirce} </div>
+      <div className="text-[#2a2a33] text-[15px] mt-1"> {card.sqPirce} </div>
       <Line />
       <div className="font-bold text-orange text-sm"> 1621 166th Ave NE </div>
       
@@ -107,7 +108,7 @@ const MyPropertyCard =(({card})=>{
 
   return (
     <div
-      className=" pb-[12px] "
+      className="pb-[12px] "
       key={key}
     >
       <div className="h-[718px] border border-grey rounded-t-[61px] rounded-br-[25px] rounded-bl-[25px] border-t-0">

@@ -3,6 +3,7 @@ import rectanglePanel from "../../img/rectangle-9.svg";
 import polygon3 from "../../img/polygon-3.svg";
 import likeButton from "../../img/icon-3.svg";
 
+
 import checkButton from "../../img/vector-81.svg";
 
 export default function Locations({ navigate }) {
@@ -28,7 +29,7 @@ function PropertyListing({
   return (
     <div className="h-[185px] border rounded-tl-[67px] rounded-tr-[1rem] rounded-br-[1rem] rounded-bl-[1rem] flex flex-row justify-between rounded-2xl border-grey ">
       <div className="relative">
-        <div className="absolute top-[93px] right-0 bg-[#FF914D] text-white text-xs font-bold px-2 py-1 z-10 transform rotate-90 origin-top-right">
+        <div className="absolute top-[93px] right-0 bg-[#FF914D] text-white text-xs font-bold px-2 py-1 z-10 transform rotate-90 origin-top-right rounded-[25px]">
           Add to listing
         </div>
         <img alt="Rectangle" src={rectangle} className="w-[343px] h-[185px]" />
@@ -93,7 +94,7 @@ function ActiveListingTag() {
   return (
     <div className="absolute w-[21px] h-[59px] top-0 left-[324px]">
       <div className="relative w-[19px] h-[59px] bg-[#ff914d] rounded-[1.13px_8.48px_9.61px_9.61px]">
-        <div className="absolute h-2.5 top-[25px] -left-3 rotate-[90.00deg] [font-family:'Mulish',Helvetica] font-bold text-white text-[7px] tracking-[0] leading-[9.0px] whitespace-nowrap">
+        <div className="absolute h-2.5 top-[25px] -left-3 rotate-[90.00deg] [font-family:Poppins,Helvetica] font-bold text-white text-[7px] tracking-[0] leading-[9.0px] whitespace-nowrap">
           Active Listing
         </div>
       </div>
@@ -152,7 +153,7 @@ function CardValues({
             src={polygon3}
           />
           <div className=" h-6[font-family:Poppins,Helvetica] font-bold text-orange text-xl tracking-[0] leading-[23.7px] whitespace-nowrap">
-            {suggestedRentValue}/ mo
+            $ {suggestedRentValue}/ mo
           </div>
           <div className="h-5 left-0 [font-family:'Poppins',Helvetica] font-normal text-[#918f8f] text-base tracking-[0] leading-[19.2px] whitespace-nowrap">
             Suggested Rent
