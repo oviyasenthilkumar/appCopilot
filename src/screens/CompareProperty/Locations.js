@@ -26,8 +26,11 @@ function PropertyListing({
   navigate,
 }) {
   return (
-    <div className="h-[185px] border flex flex-row justify-between rounded-2xl border-grey">
-      <div>
+    <div className="h-[185px] border rounded-tl-[67px] rounded-tr-[1rem] rounded-br-[1rem] rounded-bl-[1rem] flex flex-row justify-between rounded-2xl border-grey ">
+      <div className="relative">
+        <div className="absolute top-[93px] right-0 bg-[#FF914D] text-white text-xs font-bold px-2 py-1 z-10 transform rotate-90 origin-top-right">
+          Add to listing
+        </div>
         <img alt="Rectangle" src={rectangle} className="w-[343px] h-[185px]" />
       </div>
 
@@ -119,7 +122,7 @@ function CardValues({
     navigate("/drilldown");
   };
   return (
-    <div className="flex flex-row flex-1 justify-between p-6">
+    <div className="[font-family:Poppins,Helvetica] flex flex-row flex-1 justify-between p-6">
       <div className="flex flex-col gap-30">
         <div>
           <TextLarge propertyName={propertyName} address={address} />
@@ -142,7 +145,12 @@ function CardValues({
         </div>
       </div>
       <div className="flex flex-col justify-end gap-6">
-        <div className="self-end">
+        <div className="self-end relative">
+          <img
+            className="absolute w-[15px] h-[13px] top-[8px] left-[-25px] "
+            alt="Polygon"
+            src={polygon3}
+          />
           <div className=" h-6[font-family:Poppins,Helvetica] font-bold text-orange text-xl tracking-[0] leading-[23.7px] whitespace-nowrap">
             {suggestedRentValue}/ mo
           </div>
@@ -229,7 +237,7 @@ function TextSmall({ text, className }) {
 function TextLarge({ propertyName, address, className }) {
   return (
     <div
-      className={`[font-family:'Mulish',Helvetica] font-extrabold text-black text-xl tracking-[0] leading-[19.1px] whitespace-nowrap ${className}`}
+      className={`[font-family:Poppins,Helvetica] font-extrabold text-black text-xl tracking-[0] leading-[19.1px] whitespace-nowrap ${className}`}
     >
       {propertyName}
       <span className="[font-family:Poppins,Helvetica] text-base text-sm font-semibold tracking-wide leading-[19.2px]">

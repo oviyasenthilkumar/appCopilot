@@ -30,7 +30,7 @@ export const Component = ({ property1, className, pullDataClassName }) => {
 
       {state.tooltipVisible && (
         <div
-          className="absolute top-[25px] left-0 w-[126px] h-[88px] flex flex-col items-center justify-center"
+          className="absolute top-[30px] left-[-38px] w-[11rem] h-[88px] flex flex-col items-center justify-center"
           style={{ zIndex: 10 }}
         >
           <img className="w-full h-full" alt="Union" src={union} />
