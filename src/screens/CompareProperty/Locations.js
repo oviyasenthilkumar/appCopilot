@@ -3,7 +3,6 @@ import rectanglePanel from "../../img/rectangle-9.svg";
 import polygon3 from "../../img/polygon-3.svg";
 import likeButton from "../../img/icon-3.svg";
 
-
 import checkButton from "../../img/vector-81.svg";
 
 export default function Locations({ navigate }) {
@@ -27,12 +26,16 @@ function PropertyListing({
   navigate,
 }) {
   return (
-    <div className="h-[185px] border rounded-tl-[67px] rounded-tr-[1rem] rounded-br-[1rem] rounded-bl-[1rem] flex flex-row justify-between rounded-2xl border-grey ">
+    <div className=" border rounded-tl-[67px] rounded-tr-[1rem] rounded-br-[1rem] rounded-bl-[1rem] flex flex-row justify-between rounded-2xl border-grey ">
       <div className="relative">
+        <img
+          alt="Rectangle"
+          src={rectangle}
+          className="object-cover h-full w-full rounded-tl-[67px] rounded-tr-[1rem] rounded-br-[1rem] rounded-bl-[1rem]"
+        />
         <div className="absolute top-[93px] right-0 bg-[#FF914D] text-white text-xs font-bold px-2 py-1 z-10 transform rotate-90 origin-top-right rounded-[25px]">
           Add to listing
         </div>
-        <img alt="Rectangle" src={rectangle} className="w-[343px] h-[185px]" />
       </div>
 
       <CardValues
@@ -117,13 +120,13 @@ function CardValues({
   type,
   distance,
   suggestedRentValue,
-  navigate
+  navigate,
 }) {
   const handleGoToDrill = () => {
     navigate("/drilldown");
   };
   return (
-    <div className="[font-family:Poppins,Helvetica] flex flex-row flex-1 justify-between p-6">
+    <div className="[font-family:Poppins,Helvetica] flex flex-row flex-1/2 justify-between p-6">
       <div className="flex flex-col gap-30">
         <div>
           <TextLarge propertyName={propertyName} address={address} />
@@ -172,7 +175,7 @@ function CardValues({
 
 function CardValueGrid({ children }) {
   return (
-    <div className="flex flex-wrap w-[460px] items-start gap-[21px_13px] ">
+    <div className="flex flex-wrap w-full items-start gap-[21px_13px] ">
       {children}
     </div>
   );
@@ -180,7 +183,7 @@ function CardValueGrid({ children }) {
 
 function CardValueItem({ value, label }) {
   return (
-    <div className="flex flex-col w-fit items-start gap-[1px] relative border-r border-gray-300 pr-[14px]">
+    <div className="flex flex-col w-fit items-start gap-[1px] relative border-r border-[#A0A0A06B] pr-[14px]">
       <ValuesBold val={value} />
       <Values val={label} />
     </div>
@@ -227,7 +230,7 @@ function LoadMoreButton() {
 function TextSmall({ text, className }) {
   return (
     <p
-      className="[font-family:Poppins,Helvetica] text-sm text-[#7a7a7a] font-normal tracking-wide leading-[15.9px] whitespace-nowrap pt-1"
+      className="[font-family:Poppins,Helvetica] text-sm text-[#2A2A33] font-normal tracking-wide leading-[15.9px] whitespace-nowrap pt-1"
       //   className={`[font-family:'Poppins',Helvetica] font-semibold text-[#7a7a7a] text-[10px] tracking-[0] leading-[normal] whitespace-nowrap`}
     >
       {text}
@@ -238,10 +241,10 @@ function TextSmall({ text, className }) {
 function TextLarge({ propertyName, address, className }) {
   return (
     <div
-      className={`[font-family:Poppins,Helvetica] font-extrabold text-black text-xl tracking-[0] leading-[19.1px] whitespace-nowrap ${className}`}
+      className={`[font-family:Poppins,Helvetica] font-bold text-black text-xl tracking-[0] leading-[19.1px] whitespace-nowrap ${className}`}
     >
       {propertyName}
-      <span className="[font-family:Poppins,Helvetica] text-base text-sm font-semibold tracking-wide leading-[19.2px]">
+      <span className="[font-family:Poppins,Helvetica] text-[14px] font-semibold tracking-wide leading-[19.2px]">
         {" "}
         {address}
       </span>

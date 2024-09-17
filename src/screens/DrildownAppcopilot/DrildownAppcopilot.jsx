@@ -1,17 +1,8 @@
 import React from "react";
-import { Component } from "../../components/Component";
 import { useState } from "react";
-
-import rectangle from "../../img/rectangle-9.svg";
-import rectangle7 from "../../img/rectangle-7-1.png";
 import fullLogo2 from "../../img/fulllogo-transparent-nobuffer-2-2.png";
 import { IconPaginationPrev1 } from "../../icons/IconPaginationPrev1";
-import line from "../../img/line-89-1.svg";
 import line91 from "../../img/line-91.svg";
-import next from "../../img/icon-pagination-next.svg";
-import SidePanel from "../CompareProperty/SidePanel";
-import group from "../../img/group-36811-5.png";
-import poly3 from "../../img/polygon-3.svg";
 import vector2 from "../../img/vector-2.svg";
 import control from "../../img/control.svg";
 import icon5 from "../../img/icon-5.svg";
@@ -107,8 +98,6 @@ export const DrildownAppcopilot = ({
         <div className="overflow-hidden">
           <CarouselComponent />
         </div>
-
-       
         <div className="mt-10">
           <p className="[font-family:Poppins,Helvetica] font-bold text-xl text-black text-[18px] tracking-wide leading-2 whitespace-nowrap">
             Frequently Asked Questions
@@ -145,71 +134,86 @@ const Map = () => {
 const Panel = () => {
   return (
     <>
-     <div className="inline-flex items-center gap-1.5 relative top-5">
-  {/* Rental Status */}
-  <div
-    className="relative w-[154px] h-[47px] cursor-pointer"
-    onClick={() => document.getElementById("rental-status-select").click()}
-  >
-    <div className="relative w-[152px] h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center">
-      <img className="absolute w-[11px] h-1.5 top-5 left-[124px]" alt="Vector" src={vector2} />
-      <select
-        id="rental-status-select"
-        className="absolute text-center inset-0 w-full h-full bg-transparent appearance-none [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] cursor-pointer focus:outline-none"
-      >
-        <option value="Rental Status">Rental Status</option>
-        <option value="Active">Active</option>
-        <option value="Rented">Rented</option>
-        <option value="Off-Market">Off-Market</option>
-      </select>
-    </div>
-  </div>
+      <div className="inline-flex items-center gap-1.5 relative top-5">
+        {/* Rental Status */}
+        <div
+          className="relative w-[154px] h-[47px] cursor-pointer"
+          onClick={() =>
+            document.getElementById("rental-status-select").click()
+          }
+        >
+          <div className="relative w-[152px] h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center">
+            <img
+              className="absolute w-[11px] h-1.5 top-5 left-[124px]"
+              alt="Vector"
+              src={vector2}
+            />
+            <select
+              id="rental-status-select"
+              className="absolute text-center inset-0 w-full h-full bg-transparent appearance-none [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] cursor-pointer focus:outline-none"
+            >
+              <option value="Rental Status">Rental Status</option>
+              <option value="Active">Active</option>
+              <option value="Rented">Rented</option>
+              <option value="Off-Market">Off-Market</option>
+            </select>
+          </div>
+        </div>
 
-  {/* No. of Properties to Compare */}
-  <div
-    className="relative w-[260px] h-[47px] cursor-pointer"
-    onClick={() => document.getElementById("properties-select").click()}
-  >
-    <div className="relative w-[258px] h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center">
-      <img className="top-[22px] left-[230px] absolute w-[11px] h-1.5" alt="Vector" src={vector2} />
-      <select
-        id="properties-select"
-        className="absolute text-center inset-0 w-full h-full bg-transparent appearance-none [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] cursor-pointer focus:outline-none"
-      >
-        <option value="No. of Properties to Compare">No. of Properties to Compare</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9+">9+</option>
-      </select>
-    </div>
-  </div>
+        {/* No. of Properties to Compare */}
+        <div
+          className="relative w-[260px] h-[47px] cursor-pointer"
+          onClick={() => document.getElementById("properties-select").click()}
+        >
+          <div className="relative w-[258px] h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center">
+            <img
+              className="top-[22px] left-[230px] absolute w-[11px] h-1.5"
+              alt="Vector"
+              src={vector2}
+            />
+            <select
+              id="properties-select"
+              className="absolute text-center inset-0 w-full h-full bg-transparent appearance-none [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] cursor-pointer focus:outline-none"
+            >
+              <option value="No. of Properties to Compare">
+                No. of Properties to Compare
+              </option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9+">9+</option>
+            </select>
+          </div>
+        </div>
 
-  {/* Any Distance */}
-  <div
-    className="relative w-[254px] h-[47px] mr-[-2.00px] cursor-pointer"
-    onClick={() => document.getElementById("distance-select").click()}
-  >
-    <div className="relative w-[252px] h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center">
-      <img className="top-5 left-56 absolute w-[11px] h-1.5" alt="Vector" src={vector2} />
-      <select
-        id="distance-select"
-        className="absolute text-center inset-0 w-full h-full bg-transparent appearance-none [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] cursor-pointer focus:outline-none"
-      >
-        <option value="Any Distance">Any Distance (0.5 mi to 5 mi)</option>
-        <option value="0.5 mi">0.5 mi</option>
-        <option value="1 mi">1 mi</option>
-        <option value="2 mi">2 mi</option>
-        <option value="3 mi">3 mi</option>
-        <option value="5 mi">5 mi</option>
-      </select>
-    </div>
-  </div>
-</div>
-
-
-
+        {/* Any Distance */}
+        <div
+          className="relative w-[254px] h-[47px] mr-[-2.00px] cursor-pointer"
+          onClick={() => document.getElementById("distance-select").click()}
+        >
+          <div className="relative w-[252px] h-[47px] bg-[#d9d9d940] rounded-[23.5px] flex items-center">
+            <img
+              className="top-5 left-56 absolute w-[11px] h-1.5"
+              alt="Vector"
+              src={vector2}
+            />
+            <select
+              id="distance-select"
+              className="absolute text-center inset-0 w-full h-full bg-transparent appearance-none [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] cursor-pointer focus:outline-none"
+            >
+              <option value="Any Distance">
+                Any Distance (0.5 mi to 5 mi)
+              </option>
+              <option value="0.5 mi">0.5 mi</option>
+              <option value="1 mi">1 mi</option>
+              <option value="2 mi">2 mi</option>
+              <option value="3 mi">3 mi</option>
+              <option value="5 mi">5 mi</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

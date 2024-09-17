@@ -3,7 +3,7 @@ import PropertyCard from "../PropertyCard";
 import next from "../../img/icon-pagination-next.svg";
 import group from "../../img/group-36811-5.png";
 import poly3 from "../../img/polygon-3.svg";
-import vector2 from "../../img/vector-2.svg";
+import LeftArrow from "../../img/left-arrow.svg";
 import Control from "../../img/control.svg";
 import { IconPaginationPrev1 } from "../../icons/IconPaginationPrev1";
 import Slider from "react-slick";
@@ -54,8 +54,8 @@ const CarouselComponent = () => {
       beds: "3",
       baths: "2",
       sqft: "1,800",
-      view:"10",
-      show:"20",
+      view: "10",
+      show: "20",
       status: true,
     },
     {
@@ -128,19 +128,16 @@ const CarouselComponent = () => {
     }
   };
 
- 
   return (
-    <div className="[font-family:Poppins,Helvetica] absoulte w-full">
-      <div className=" flex justify-center items-center">
-        <div
-          className="flex flex-col w-8 h-8 items-center justify-center gap-2.5 p-2.5 relative bg-[#ff914d] rounded-lg  cursor-pointer"
+    <div className="[font-family:Poppins,Helvetica] absoulte items-center">
+      <div className="flex justify-center items-center">
+        <img
+          className="relative w-8 h-8 cursor-pointer"
+          alt="LeftArrow"
+          src={LeftArrow}
           onClick={prev}
-        >
-          <IconPaginationPrev1
-            className="!relative !mt-[-2.00px] !mb-[-2.00px] !ml-[-2.00px] !mr-[-2.00px] !w-4 !h-4"
-            color="white"
-          />
-        </div>
+        />
+
         {/* Cards container */}
         <div className="flex overflow-hidden">
           <div
@@ -150,15 +147,13 @@ const CarouselComponent = () => {
             }}
           >
             {cards.map((card) => (
-              <div
-                key={card.id}
-                className=" p-2 flex-shrink-0"
-              >
+              <div key={card.id} className=" p-2 flex-shrink-0">
                 <PropertyCard card={card} />
               </div>
             ))}
           </div>
         </div>
+
         {/* Right Arrow */}
         <img
           className="relative w-8 h-8 cursor-pointer"
