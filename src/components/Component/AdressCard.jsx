@@ -13,7 +13,7 @@ const AdressCard = ({
           3806 W 20th Ave
         </div>
         <p className="w-[45%] font-medium text-black text-base leading-6 [font-family:'Poppins',Helvetica] tracking-[0]">
-          Kennewick, WA 99338 3 beds • 2.5 baths • 2400 Sq Ft Lease Expiry Date
+          Kennewick, WA 99338 <br/>3 beds • 2.5 baths • 2400 Sq Ft <br/>Lease Expiry Date
           - 25/06/2024
         </p>
       </div>

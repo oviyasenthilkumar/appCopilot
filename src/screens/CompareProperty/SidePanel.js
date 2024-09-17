@@ -10,7 +10,7 @@ import setting from "../../img/setting.svg";
 import support from "../../img/support.svg";
 
 const SidePanelItem = ({ iconSrc, text, notification, color }) => (
-  <div className="h-11 items-center gap-3 px-4 py-3 rounded-full flex relative hover:bg-gray-100 cursor-pointer">
+  <div className="[font-family:Poppins,Helvetica] h-11 items-center gap-3 px-4 py-3 rounded-full flex relative hover:bg-gray-100 cursor-pointer">
     <div className="flex items-start gap-3 relative flex-1">
       {iconSrc ? (
         <img className="w-5 h-5" alt="Icon" src={iconSrc} />
@@ -78,10 +78,14 @@ export default function SidePanel() {
         </div>
 
         <div>
-          <div className="text-gray-500 text-sm">Welcome back 👋</div>
-          <div className="text-gray-900 text-base font-medium">Johnathan</div>
+          <div className="[font-family:Poppins,Helvetica] ld text-gray-500 text-sm">
+            Welcome back 👋
+          </div>
+          <div className="[font-family:Poppins,Helvetica] font-bold text-gray-900 text-base ">
+            Johnathan
+          </div>
         </div>
-        <Caret className="ml-auto w-5 h-5 text-gray-900" />
+        <Caret className="[font-family:Poppins,Helvetica]  ml-auto w-5 h-5 text-gray-900" />
       </div>
     </div>
   );
