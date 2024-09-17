@@ -20,7 +20,6 @@ import AdressCard from "../../components/Component/AdressCard";
 import PropertyCard from "../../components/PropertyCard";
 import CarouselComponent from "../../components/Component/CarouselComponent";
 
-
 // characteristics of a home -> db || default values
 
 // faq questions -> db || default values
@@ -36,27 +35,33 @@ import CarouselComponent from "../../components/Component/CarouselComponent";
 const faqData = [
   {
     question: "What should I do if I notice suspicious activity on my account?",
-    answer: "You should immediately report the suspicious activity to your account provider and change your account password.",
+    answer:
+      "You should immediately report the suspicious activity to your account provider and change your account password.",
   },
   {
     question: "How can I update my property listing?",
-    answer: "To update your property listing, log in to your account and navigate to the 'Manage Listings' section.",
+    answer:
+      "To update your property listing, log in to your account and navigate to the 'Manage Listings' section.",
   },
   {
     question: "How do I change my email alert preferences?",
-    answer: "Go to your account settings and select 'Email Preferences' to adjust your alert settings.",
+    answer:
+      "Go to your account settings and select 'Email Preferences' to adjust your alert settings.",
   },
   {
     question: "How do I reset my password?",
-    answer: "Click on 'Forgot Password' on the login page and follow the instructions to reset your password.",
+    answer:
+      "Click on 'Forgot Password' on the login page and follow the instructions to reset your password.",
   },
   {
     question: "When should I raise or lower my rent price?",
-    answer: "Consider adjusting your rent price based on market trends, property condition, and rental demand.",
+    answer:
+      "Consider adjusting your rent price based on market trends, property condition, and rental demand.",
   },
   {
     question: "What should I do if I notice suspicious activity on my account?",
-    answer: "You should immediately report the suspicious activity to your account provider and change your account password.",
+    answer:
+      "You should immediately report the suspicious activity to your account provider and change your account password.",
   },
 ];
 
@@ -91,9 +96,8 @@ export const DrildownAppcopilot = ({
 
   return (
     <Layout title="Suggested Rent">
-      
       <AdressCard lowPrice={3500} highPrice={4500} suggestedRent={3779} />
-      <div className="bg-white p-[24px] border rounded-2xl border-grey">
+      <div className="bg-white w-full p-[24px] border rounded-2xl border-grey ">
         <div className="">
           <p className="[font-family:Poppins,Helvetica] font-semibold text-black text-[32px] tracking-[0] leading-2 whitespace-nowrap">
             Local Rental marketlplace
@@ -108,9 +112,9 @@ export const DrildownAppcopilot = ({
           highPrice={highPrice}
           suggestedRent={suggestedRent}
         />
-        {/*panels*/}              
-         <Panel/>
-         {/* Map */}
+        {/*panels*/}
+        <Panel />
+        {/* Map */}
         <Map />
         <div className="overflow-hidden">
           <CarouselComponent />
@@ -152,66 +156,51 @@ const Map = () => {
     </div>
   );
 };
-const Panel = ()=>{
-  return(
+const Panel = () => {
+  return (
     <>
-                <div className="inline-flex items-center gap-1.5 relative top-5 ">
-                  <div className="relative w-[154px] h-[47px]">
-                    <div className="relative w-[152px] h-[47px] bg-[#d9d9d940] rounded-[23.5px]">
-                      <img
-                        className="absolute w-[11px] h-1.5 top-5 left-[124px]"
-                        alt="Vector"
-                        src={vector2}
-                      />
-                      <div className="absolute h-6 top-[11px] left-5 [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] whitespace-nowrap">
-                        Rental Status
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative w-[260px] h-[47px]">
-                    <div className="relative w-[258px] h-[47px] bg-[#d9d9d940] rounded-[23.5px]">
-                      <img
-                        className="top-[22px] left-[230px] absolute w-[11px] h-1.5"
-                        alt="Vector"
-                        src={vector2}
-                      />
-                      <p className="absolute h-6 top-3 left-5 [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] whitespace-nowrap">
-                        No. of Properties to Compare
-                      </p>
-                    </div>
-                  </div>
-                  <div className="relative w-[254px] h-[47px] mr-[-2.00px]">
-                    <div className="relative w-[252px] h-[47px] bg-[#d9d9d940] rounded-[23.5px]">
-                      <img className="top-5 left-56 absolute w-[11px] h-1.5" alt="Vector" src={vector2} />
-                      <p className="absolute h-6 top-[11px] left-5 [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] whitespace-nowrap">
-                        Any Distance (0.5 mi to 5 mi)
-                      </p>
-                    </div>
-                  </div>
-                </div>
+      <div className="inline-flex items-center gap-1.5 relative top-5 ">
+        <div className="relative w-[154px] h-[47px]">
+          <div className="relative w-[152px] h-[47px] bg-[#d9d9d940] rounded-[23.5px]">
+            <img
+              className="absolute w-[11px] h-1.5 top-5 left-[124px]"
+              alt="Vector"
+              src={vector2}
+            />
+            <div className="absolute h-6 top-[11px] left-5 [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] whitespace-nowrap">
+              Rental Status
+            </div>
+          </div>
+        </div>
+        <div className="relative w-[260px] h-[47px]">
+          <div className="relative w-[258px] h-[47px] bg-[#d9d9d940] rounded-[23.5px]">
+            <img
+              className="top-[22px] left-[230px] absolute w-[11px] h-1.5"
+              alt="Vector"
+              src={vector2}
+            />
+            <p className="absolute h-6 top-3 left-5 [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] whitespace-nowrap">
+              No. of Properties to Compare
+            </p>
+          </div>
+        </div>
+        <div className="relative w-[254px] h-[47px] mr-[-2.00px]">
+          <div className="relative w-[252px] h-[47px] bg-[#d9d9d940] rounded-[23.5px]">
+            <img
+              className="top-5 left-56 absolute w-[11px] h-1.5"
+              alt="Vector"
+              src={vector2}
+            />
+            <p className="absolute h-6 top-[11px] left-5 [font-family:'Poppins',Helvetica] font-light text-[#2a2a33] text-sm tracking-[0] leading-[24.0px] whitespace-nowrap">
+              Any Distance (0.5 mi to 5 mi)
+            </p>
+          </div>
+        </div>
+      </div>
     </>
-  )
-}
-// function FAQ({
-//   q = "What should I do if I notice suspicious activity on my account?",
-// }) {
-//   return (
-//     <div className="flex flex-row justify-between w-[48%]   bg-[#f4f4f6] rounded-[18px] p-[24px] ">
-//       <div className=" w-[70%]">
-//         <p className="[font-family:'Poppins',Helvetica] font-normal text-black text-base tracking-[0] leading-[23px]">
-//           {q}
-//         </p>
-//       </div>
-//       <div className=" w-[41px] h-[41px] bg-[#ff914d] rounded-lg flex justify-center ">
-//         <img
-//           className=" w-[19px] h-[19px] self-center"
-//           alt="Group"
-//           src={group}
-//         />
-//       </div>
-//     </div>
-//   );
-// }
+  );
+};
+
 function FAQ({ q, a, isExpanded, onToggle }) {
   return (
     <div className="w-full md:w-[48%] bg-[#f4f4f6] rounded-[18px] p-[24px] mb-4">
@@ -223,7 +212,7 @@ function FAQ({ q, a, isExpanded, onToggle }) {
           {q}
         </p>
         <div className="w-[41px] h-[41px] bg-[#ff914d] rounded-lg flex justify-center items-center">
-          <span className="text-white text-lg">{isExpanded ? '-' : '+'}</span>
+          <span className="text-white text-lg">{isExpanded ? "-" : "+"}</span>
         </div>
       </div>
       {isExpanded && (
