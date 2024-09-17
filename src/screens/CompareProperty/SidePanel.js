@@ -20,7 +20,7 @@ const SidePanelItem = ({ iconSrc, text, notification, color }) => (
       <div
         className={`${
           color ? "text-orange" : "text-black"
-        } text-base font-medium`}
+        } text-sm font-medium`}
       >
         {text}
       </div>
@@ -32,6 +32,7 @@ const SidePanelItem = ({ iconSrc, text, notification, color }) => (
 );
 
 export default function SidePanel() {
+  
   return (
     <div className="sticky top-8 left-8 w-[335px] h-[678px] bg-[#f6f6fa] rounded-[37px] overflow-y-auto shadow-lg">
       {/* Logo Section */}
@@ -78,10 +79,10 @@ export default function SidePanel() {
         </div>
 
         <div>
-          <div className="[font-family:Poppins,Helvetica] ld text-gray-500 text-sm">
+          <div className="[font-family:Poppins,Helvetica] ld text-gray-500 text-xs">
             Welcome back 👋
           </div>
-          <div className="[font-family:Poppins,Helvetica] font-bold text-gray-900 text-base ">
+          <div className="[font-family:Poppins,Helvetica] font-bold text-gray-900 text-sm ">
             Johnathan
           </div>
         </div>

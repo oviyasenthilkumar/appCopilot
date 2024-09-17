@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropertyCard from "../PropertyCard";
 import next from "../../img/icon-pagination-next.svg";
 import group from "../../img/group-36811-5.png";
@@ -125,6 +125,8 @@ const CarouselComponent = () => {
       setCurrentIndex(currentIndex - itemsToShow);
     }
   };
+
+ 
   return (
     <div className="[font-family:Poppins,Helvetica] absoulte w-full">
       <div className=" flex justify-center items-center">
@@ -138,7 +140,7 @@ const CarouselComponent = () => {
           />
         </div>
         {/* Cards container */}
-        <div className="flex overflow-hidden w-[1188px] ">
+        <div className="flex overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{
@@ -148,7 +150,7 @@ const CarouselComponent = () => {
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="min-w-[calc(100%/50)] p-2 flex-shrink-0"
+                className=" p-2 flex-shrink-0"
               >
                 <PropertyCard card={card} />
               </div>
